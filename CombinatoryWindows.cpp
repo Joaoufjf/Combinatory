@@ -34,7 +34,7 @@ int main() {
 
   for(int n = 1; n <= 30; n++){
     stringstream str;
-    str << "linux/" << n << ".txt";
+    str << "windows/" << n << ".txt";
     out.open(str.str());
     std::time_t t = std::time(nullptr);
     std::tm* tm = std::localtime( & t);

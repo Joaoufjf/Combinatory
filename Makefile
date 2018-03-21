@@ -1,7 +1,7 @@
 #
 all: create_folders
-	g++ -Wall -fexceptions -O2 -std=c++11  -c "main.cpp" -o obj/main.o
-	g++  -o bin/Combinatory obj/main.o  -s  -lgomp
+	g++ -Wall -fexceptions -O2 -std=c++11  -c "CombinatoryLinux.cpp" -o obj/CombinatoryLinux.o
+	g++  -o bin/CombinatoryLinux obj/CombinatoryLinux.o  -s  -lgomp
 
 create_folders:
 	mkdir obj
