@@ -1,0 +1,12 @@
+2018-3-21, 15:50:26
+loop 1 de 10
+loop 2 de 10
+loop 3 de 10
+loop 4 de 10
+loop 5 de 10
+loop 6 de 10
+loop 7 de 10
+loop 8 de 10
+loop 9 de 10
+loop 10 de 10
+2018-3-21, 15:50:26

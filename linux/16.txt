@@ -1,0 +1,18 @@
+2018-3-21, 15:50:26
+loop 1 de 16
+loop 2 de 16
+loop 3 de 16
+loop 4 de 16
+loop 5 de 16
+loop 6 de 16
+loop 7 de 16
+loop 8 de 16
+loop 9 de 16
+loop 10 de 16
+loop 11 de 16
+loop 12 de 16
+loop 13 de 16
+loop 14 de 16
+loop 15 de 16
+loop 16 de 16
+2018-3-21, 15:50:26
