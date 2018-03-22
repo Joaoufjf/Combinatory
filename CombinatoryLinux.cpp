@@ -31,33 +31,29 @@ void comb(int N, int K) {
 
 int main() {
   std::ofstream out;
+  int n = 38;
+  stringstream str;
+  str << "linux/" << n << ".txt";
+  out.open(str.str());
+  std::time_t t = std::time(NULL);
+  std::tm* tm = std::localtime(&t);
+  out <<  tm->tm_mday << "-"
+      << (tm->tm_mon + 1) << "-"
+      << (tm->tm_year + 1900) << " "
+      <<  tm->tm_hour << ":" << tm->tm_min << ":" << tm->tm_sec << endl;
 
-  for(int n = 1; n <= 30; n++){
-    stringstream str;
-    str << "linux/" << n << ".txt";
-    out.open(str.str());
-    std::time_t t = std::time(nullptr);
-    std::tm* tm = std::localtime( & t);
-//    std::cout << std::put_time(&tm, "%d-%m-%Y %H:%M:%S") << std::endl;
-//    std::cout << std::localtime( & t) << std::endl;
-    out << (tm->tm_year + 1900) << '-'
-        << (tm->tm_mon + 1) << '-'
-        <<  tm->tm_mday << ", "
-        <<  tm->tm_hour << ":" << tm->tm_min << ":" << tm->tm_sec << endl;
-
-    for (int i = 1; i <= n; i++) {
-        comb(n, i);
-        out <<"loop " << i <<" de " <<n <<endl;
-    }
-    t = std::time(nullptr);
-    tm = std::localtime( & t);
-    out << (tm->tm_year + 1900) << '-'
-        << (tm->tm_mon + 1) << '-'
-        <<  tm->tm_mday << ", "
-        <<  tm->tm_hour << ":" << tm->tm_min << ":" << tm->tm_sec << endl;
-    out.close();
+  for (int i = 1; i <= n; i++) {
+      comb(n, i);
+      out <<"loop " << i <<" de " <<n <<endl;
   }
+  std::time_t t2 = std::time(NULL);
+  tm = std::localtime(&t2);
+  out <<  tm->tm_mday << "-"
+      << (tm->tm_mon + 1) << "-"
+      << (tm->tm_year + 1900) << " "
+      <<  tm->tm_hour << ":" << tm->tm_min << ":" << tm->tm_sec << endl;
+  out << double(difftime(t2, t)) << endl;
+  out.close();
 
-  //system("pause");
   return 0;
 }
