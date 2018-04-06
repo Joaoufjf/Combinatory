@@ -10,31 +10,51 @@ int main(){
 
 
     cout << "Hello world!" << endl;
-    cout << fixed;
+    //cout << fixed;
     KnapsackSolver* ks = new KnapsackSolver();
 
     int i = 1;
     int type;
-    float value;
-    float target;
+    string description, leave, s;
+	bool on, off;
+    int value;
+    int target;
+	int cumulated = 0;
 
-    cin >> target;
-
-    ///#pragma omp parallel for  ----usar -fopenmp
-    while(cin >> type){
-        cin >> value;
-        cout << type << " " << value << endl;
-        stringstream str;
-        str << i;
-        ks->AddItem(str.str(), false, type == 1 ? value : (value * -1.0));
+    
+	while(cin >> leave >> description >> leave /*ignore*/){
+        cin >> s;
+		s.erase(s.end() - 3);
+        value = atoi(s.c_str());
+        cin >> on;
+        cin >> off;
+        cin >> type;
+        
+        if(type == 2)
+			value *= -1;
+        
+        cin >> s;
+        s.erase(s.end() - 3);
+        target = atoi(s.c_str());
+        //cout << description << " ";
+        //cout << value << " ";
+        //cout << on << " ";
+        //cout << off << " ";
+        //cout << type << " ";
+        //cout << value << endl;
+		if(!off){
+			if(on){
+				cout << "Sol + " << description << endl;
+				cumulated += value;
+			}
+			else{
+				ks->AddItem(description, false, value);
+			}
+		}
         i++;
     }
 
-//    ks->Print(true);
-    cout << target << endl;
-    ks->RecursiveKnapsack(target);
-//    ks->Print();
-
+	ks->RecursiveKnapsack(target, cumulated);
 
     return 0;
 }

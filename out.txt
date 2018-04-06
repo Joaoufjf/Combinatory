@@ -1,0 +1,13 @@
+rm -rf obj/
+rm -rf bin/
+mkdir obj
+mkdir bin
+g++ -O2 -std=c++11  -c "main.cpp" -o obj/main.o
+g++ -O2 -std=c++11  -c "KnapsackSolver.cpp" -o obj/KnapsackSolver.o
+g++  -o bin/CombinatoryLinux obj/main.o obj/KnapsackSolver.o
+Hello world!
+Target original: 3663707.050000
+1 43.520000 1 1 0
+Target modificado: 3663707.050000
+Target = 3663707.050000
+0
