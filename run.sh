@@ -1,3 +1,9 @@
+#!/bin/bash
 make clean
 make
-./bin/CombinatoryLinux
+
+for file in input/*;
+do
+	echo Solving $file
+	./bin/CombinatoryLinux $file
+done
